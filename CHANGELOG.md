@@ -1,3 +1,9 @@
+## [11.0.2] - 18 March 2024
+
+### Changed
+
+- allow adding comments after "// ts-unused-exports:disable-next-line" to explain the reason of the ignore
+
 ## [11.0.1] - 25 Nov 2024
 
 ### Changed
