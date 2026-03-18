@@ -32,3 +32,13 @@ Scenario: Disable with comments
     """
   When analyzing "tsconfig.json"
   Then the result is { "unusedExports": { "a.ts": ["b"] } }
+
+Scenario: Disable with comments with explanation
+Given file "a.ts" is
+    """
+    // ts-unused-exports:disable-next-line because some good reason
+    export const a = 1;
+    export const b = 1;
+    """
+  When analyzing "tsconfig.json"
+  Then the result is { "unusedExports": { "a.ts": ["b"] } }
