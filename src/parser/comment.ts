@@ -16,7 +16,7 @@ export const isNodeDisabledViaComment = (
     const commentText = file
       .getFullText()
       .substring(commentRange.pos, commentRange.end);
-    if (commentText === '// ts-unused-exports:disable-next-line') {
+    if (commentText.startsWith('// ts-unused-exports:disable-next-line')) {
       return true;
     }
   }
